@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dn6dfgme65wra"]
+
+[ext_resource type="Script" uid="uid://bfpkq0ugnnmid" path="res://Scripts/killer.gd" id="1_4lk16"]
+[ext_resource type="Texture2D" uid="uid://c038gcdpgni52" path="res://Items/KillerExist.png" id="1_nw6c6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lk16"]
+size = Vector2(48, 127)
+
+[node name="Killer" type="CharacterBody2D" unique_id=1137907393]
+script = ExtResource("1_4lk16")
+
+[node name="KillerExist" type="Sprite2D" parent="." unique_id=1469760295]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_nw6c6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=531360438]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4lk16")

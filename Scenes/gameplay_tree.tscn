@@ -1,19 +1,27 @@
 [gd_scene format=3 uid="uid://su3xrm7q1xjx"]
 
+[ext_resource type="Script" uid="uid://q46b15v17pbm" path="res://Scripts/gameplay.gd" id="1_cpys3"]
 [ext_resource type="PackedScene" uid="uid://dn6dfgme65wra" path="res://Scenes/killer.tscn" id="1_um0va"]
 [ext_resource type="PackedScene" uid="uid://bjca532v6f6vy" path="res://Scenes/Ground.tscn" id="2_7rkwj"]
+[ext_resource type="PackedScene" uid="uid://dwpoki2oemcjr" path="res://Scenes/poster.tscn" id="4_dd25c"]
+[ext_resource type="PackedScene" uid="uid://c3pes6g278i82" path="res://Scenes/target.tscn" id="5_dd25c"]
 
 [node name="GameplayTree" type="Node2D" unique_id=1234816670]
+script = ExtResource("1_cpys3")
 
 [node name="Killer" parent="." unique_id=1137907393 instance=ExtResource("1_um0va")]
-position = Vector2(344, 310)
+position = Vector2(100, 552)
 
 [node name="GroundTile" parent="." unique_id=967300120 instance=ExtResource("2_7rkwj")]
 position = Vector2(66, 636)
 scale = Vector2(50, 1)
 
-[node name="GroundTile2" parent="." unique_id=1744807174 instance=ExtResource("2_7rkwj")]
-position = Vector2(-86, 589)
+[node name="Poster" parent="." unique_id=1173825111 instance=ExtResource("4_dd25c")]
+position = Vector2(621, 537)
 
-[node name="GroundTile3" parent="." unique_id=729402144 instance=ExtResource("2_7rkwj")]
-position = Vector2(-109, 523)
+[node name="Target" parent="." unique_id=226955712 instance=ExtResource("5_dd25c")]
+position = Vector2(-252, 556)
+
+[connection signal="shoot" from="Killer" to="." method="on_shoot_emit"]
+[connection signal="inspect" from="Poster" to="." method="_poster_inspected"]
+[connection signal="got_shot" from="Target" to="." method="_on_target_got_shot"]

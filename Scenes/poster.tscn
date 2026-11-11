@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dwpoki2oemcjr"]
+
+[ext_resource type="Script" uid="uid://b164pcqsk6frm" path="res://Scripts/poster.gd" id="1_efwel"]
+[ext_resource type="Texture2D" uid="uid://b2igmh2670hie" path="res://icon.svg" id="1_f5i7g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efwel"]
+size = Vector2(144.0625, 121)
+
+[node name="Poster" type="Area2D" unique_id=1173825111]
+script = ExtResource("1_efwel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=984159395]
+scale = Vector2(0.34375, 1)
+texture = ExtResource("1_f5i7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1260298064]
+shape = SubResource("RectangleShape2D_efwel")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

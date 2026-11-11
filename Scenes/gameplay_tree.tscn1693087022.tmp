@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://su3xrm7q1xjx"]
+
+[ext_resource type="PackedScene" uid="uid://dn6dfgme65wra" path="res://Scenes/killer.tscn" id="1_um0va"]
+[ext_resource type="PackedScene" uid="uid://bjca532v6f6vy" path="res://Scenes/Ground.tscn" id="2_7rkwj"]
+
+[node name="GameplayTree" type="Node2D" unique_id=1234816670]
+
+[node name="Killer" parent="." unique_id=1137907393 instance=ExtResource("1_um0va")]
+position = Vector2(344, 310)
+
+[node name="GroundTile" parent="." unique_id=967300120 instance=ExtResource("2_7rkwj")]
+position = Vector2(66, 636)
+scale = Vector2(50, 1)
+
+[node name="GroundTile2" parent="." unique_id=1744807174 instance=ExtResource("2_7rkwj")]
+position = Vector2(-86, 589)
+
+[node name="GroundTile3" parent="." unique_id=729402144 instance=ExtResource("2_7rkwj")]
+position = Vector2(-109, 523)

@@ -8,7 +8,7 @@ var speed := 100.0
 var player_detected := false
 
 func _physics_process(delta: float) -> void:
-	while not player_detected:
+	if not player_detected:
 		patrol()
 	move_and_slide()
 	

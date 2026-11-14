@@ -26,7 +26,7 @@ script = ExtResource("1_ynn1y")
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=564379422]
 texture = SubResource("GradientTexture2D_qll42")
 
-[node name="EnviroCasts" type="Node" parent="Node2D" unique_id=67898965]
+[node name="EnviroCasts" type="Node2D" parent="Node2D" unique_id=1374115599]
 script = ExtResource("2_2d141")
 
 [node name="RayCast2D" type="RayCast2D" parent="Node2D/EnviroCasts" unique_id=1692458765]
@@ -35,7 +35,7 @@ target_position = Vector2(50, 0)
 [node name="RayCast2D2" type="RayCast2D" parent="Node2D/EnviroCasts" unique_id=1869748255]
 position = Vector2(50, 0)
 
-[node name="PlayerSearch" type="Node" parent="Node2D" unique_id=387954077]
+[node name="PlayerSearch" type="Node2D" parent="Node2D" unique_id=598002337]
 script = ExtResource("3_6i0yf")
 
 [node name="RayCast2D" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=842823119]

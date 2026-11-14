@@ -32,7 +32,7 @@ position = Vector2(347, 309)
 scale = Vector2(5, 1)
 
 [node name="enemy" parent="." unique_id=1928524964 instance=ExtResource("7_5arsr")]
-position = Vector2(66, 261)
+position = Vector2(60, 266)
 
 [connection signal="inspect" from="Poster" to="." method="_poster_inspected"]
 [connection signal="got_shot" from="Target" to="." method="_on_target_got_shot"]

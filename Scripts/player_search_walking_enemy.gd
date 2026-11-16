@@ -1,11 +1,19 @@
-extends Node
+extends Node2D
+var n : int
 
+var rayList = []
+var rayListManual = []
+signal player_detected(distance : Vector2)
+signal player_lost
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	rayList = Array(get_children())
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	for ray in rayList:
+		if ray.get_collider() is CharacterBody2D:
+			player_detected.emit(ray.get_collider().global_position - ray.get_parent().global_position)
+			n += 1
+	if n == 0:
+		player_lost.emit()
+	n = 0

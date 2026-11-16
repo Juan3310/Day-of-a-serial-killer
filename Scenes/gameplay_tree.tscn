@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c3pes6g278i82" path="res://Scenes/target.tscn" id="5_dd25c"]
 [ext_resource type="PackedScene" uid="uid://ctg3ltutds2u6" path="res://Scenes/shop.tscn" id="6_fkb2u"]
 [ext_resource type="PackedScene" uid="uid://bi0vrrn2uvxck" path="res://Scenes/walking_enemy.tscn" id="7_5arsr"]
+[ext_resource type="PackedScene" uid="uid://bl5l60kr6twi1" path="res://Scenes/drone.tscn" id="8_qll42"]
 
 [node name="GameplayTree" type="Node2D" unique_id=1234816670]
 script = ExtResource("1_cpys3")
@@ -25,14 +26,30 @@ position = Vector2(-252, 556)
 position = Vector2(1008, 518)
 
 [node name="Killer" parent="." unique_id=1137907393 instance=ExtResource("1_um0va")]
-position = Vector2(100, 552)
+position = Vector2(22, 563)
 
 [node name="GroundTile2" parent="." unique_id=977240334 instance=ExtResource("2_7rkwj")]
 position = Vector2(347, 309)
 scale = Vector2(5, 1)
 
+[node name="GroundTile3" parent="." unique_id=372406256 instance=ExtResource("2_7rkwj")]
+position = Vector2(-444, 194.99998)
+rotation = 0.43633232
+scale = Vector2(5, 1)
+
+[node name="GroundTile4" parent="." unique_id=76911089 instance=ExtResource("2_7rkwj")]
+position = Vector2(311, 58)
+rotation = 1.5707964
+
+[node name="GroundTile5" parent="." unique_id=1684092356 instance=ExtResource("2_7rkwj")]
+position = Vector2(-381, 55)
+rotation = 1.5707964
+
 [node name="enemy" parent="." unique_id=1928524964 instance=ExtResource("7_5arsr")]
 position = Vector2(60, 266)
+
+[node name="Drone" parent="." unique_id=12346410 instance=ExtResource("8_qll42")]
+position = Vector2(3, 43)
 
 [connection signal="inspect" from="Poster" to="." method="_poster_inspected"]
 [connection signal="got_shot" from="Target" to="." method="_on_target_got_shot"]

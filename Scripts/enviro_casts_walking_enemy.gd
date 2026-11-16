@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var floor_ray : RayCast2D
 var wall_ray : RayCast2D

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bl5l60kr6twi1"]
+
+[ext_resource type="Script" uid="uid://dsbwmnr0fmd8j" path="res://Scripts/drone.gd" id="1_x74uf"]
+[ext_resource type="Texture2D" uid="uid://b2igmh2670hie" path="res://icon.svg" id="2_y2b23"]
+[ext_resource type="Script" uid="uid://cmw3n8jgclw4u" path="res://Scripts/player_search.drone.gd" id="3_n202n"]
+[ext_resource type="Script" uid="uid://c3f0uj8egk3ht" path="res://Scripts/enviro_casts_drone.gd" id="4_mmlcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhjr3"]
+size = Vector2(70, 20)
+
+[node name="Drone" type="Area2D" unique_id=12346410]
+script = ExtResource("1_x74uf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1938013201]
+position = Vector2(-1.9073486e-06, 0)
+scale = Vector2(0.5253906, 0.21875001)
+texture = ExtResource("2_y2b23")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1963375648]
+shape = SubResource("RectangleShape2D_qhjr3")
+
+[node name="PlayerSearch" type="Node2D" parent="." unique_id=1772937186]
+script = ExtResource("3_n202n")
+
+[node name="RayCast2D" type="RayCast2D" parent="PlayerSearch" unique_id=1150798386]
+target_position = Vector2(100, 200)
+
+[node name="RayCast2D2" type="RayCast2D" parent="PlayerSearch" unique_id=1175218858]
+target_position = Vector2(-100, 200)
+
+[node name="RayCast2D3" type="RayCast2D" parent="PlayerSearch" unique_id=1212181615]
+target_position = Vector2(-50, 200)
+
+[node name="RayCast2D4" type="RayCast2D" parent="PlayerSearch" unique_id=200127526]
+target_position = Vector2(50, 200)
+
+[node name="RayCast2D5" type="RayCast2D" parent="PlayerSearch" unique_id=638156236]
+target_position = Vector2(0, 200)
+
+[node name="EnviroCasts" type="Node2D" parent="." unique_id=538246626]
+script = ExtResource("4_mmlcq")
+
+[node name="RayCast2D" type="RayCast2D" parent="EnviroCasts" unique_id=1149739612]
+target_position = Vector2(75, 0)
+
+[connection signal="wall_dect" from="EnviroCasts" to="." method="_on_wall_dect"]

@@ -1,11 +1,11 @@
 extends Area2D
 
 var direction : Vector2
-var player_position : Vector2
+var shoot_position : Vector2
 var speed := 900.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position = player_position
+	position = shoot_position
 	rotation = direction.angle()
 	print(position)
 

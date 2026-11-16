@@ -20,10 +20,10 @@ func _poster_inspected() -> void:
 	else:
 		print("checklisted already")
 		
-func on_shoot_emit(direction, killer_position):
+func on_shoot_emit(direction, shooter_postion):
 	var bullet = bullet_scene.instantiate()
 	
-	bullet.player_position = killer_position
+	bullet.shoot_position = shooter_postion
 	bullet.direction = direction
 	$".".add_child(bullet)
 

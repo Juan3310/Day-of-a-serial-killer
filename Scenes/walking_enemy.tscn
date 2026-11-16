@@ -39,13 +39,25 @@ position = Vector2(50, 0)
 script = ExtResource("3_6i0yf")
 
 [node name="RayCast2D" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=842823119]
-target_position = Vector2(150, 0)
+target_position = Vector2(350, 0)
+
+[node name="RayCast2D4" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=152004158]
+target_position = Vector2(-100, 0)
+
+[node name="RayCast2D7" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=1349717780]
+target_position = Vector2(0, -100)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=1029323900]
-target_position = Vector2(150, 50)
+target_position = Vector2(350, 50)
+
+[node name="RayCast2D5" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=786492556]
+target_position = Vector2(-100, 50)
 
 [node name="RayCast2D3" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=154145789]
-target_position = Vector2(150, -50)
+target_position = Vector2(350, -50)
+
+[node name="RayCast2D6" type="RayCast2D" parent="Node2D/PlayerSearch" unique_id=1131310337]
+target_position = Vector2(-100, -50)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=312682725]
 
@@ -57,3 +69,5 @@ shape = SubResource("RectangleShape2D_lju2c")
 
 [connection signal="floor_dect" from="Node2D/EnviroCasts" to="." method="_on_floor_dect"]
 [connection signal="wall_dect" from="Node2D/EnviroCasts" to="." method="_on_wall_dect"]
+[connection signal="player_detected" from="Node2D/PlayerSearch" to="." method="_on_player_detected"]
+[connection signal="player_lost" from="Node2D/PlayerSearch" to="." method="_on_player_lost"]

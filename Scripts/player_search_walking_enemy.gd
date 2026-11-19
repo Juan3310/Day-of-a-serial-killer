@@ -1,8 +1,8 @@
 extends Node2D
+
 var n : int
 
 var rayList = []
-var rayListManual = []
 signal player_detected(distance : Vector2)
 signal player_lost
 

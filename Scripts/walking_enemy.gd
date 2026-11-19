@@ -14,7 +14,6 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	
 	if not player_detected:
 		direction = Vector2($Node2D.scale.x, 0)
 		speed = 150.0

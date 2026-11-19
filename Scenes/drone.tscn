@@ -43,4 +43,6 @@ script = ExtResource("4_mmlcq")
 [node name="RayCast2D" type="RayCast2D" parent="EnviroCasts" unique_id=1149739612]
 target_position = Vector2(75, 0)
 
+[connection signal="player_detected" from="PlayerSearch" to="." method="_on_player_detected"]
+[connection signal="player_lost" from="PlayerSearch" to="." method="_on_player_lost"]
 [connection signal="wall_dect" from="EnviroCasts" to="." method="_on_wall_dect"]

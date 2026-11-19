@@ -1,15 +1,27 @@
 [gd_scene format=3 uid="uid://su3xrm7q1xjx"]
 
+[ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scenes/inversion.gdshader" id="1_5arsr"]
 [ext_resource type="Script" uid="uid://q46b15v17pbm" path="res://Scripts/gameplay.gd" id="1_cpys3"]
 [ext_resource type="PackedScene" uid="uid://dn6dfgme65wra" path="res://Scenes/killer.tscn" id="1_um0va"]
 [ext_resource type="PackedScene" uid="uid://bjca532v6f6vy" path="res://Scenes/Ground.tscn" id="2_7rkwj"]
 [ext_resource type="PackedScene" uid="uid://dwpoki2oemcjr" path="res://Scenes/poster.tscn" id="4_dd25c"]
 [ext_resource type="PackedScene" uid="uid://c3pes6g278i82" path="res://Scenes/target.tscn" id="5_dd25c"]
 [ext_resource type="PackedScene" uid="uid://ctg3ltutds2u6" path="res://Scenes/shop.tscn" id="6_fkb2u"]
-[ext_resource type="PackedScene" uid="uid://bi0vrrn2uvxck" path="res://Scenes/walking_enemy.tscn" id="7_5arsr"]
-[ext_resource type="PackedScene" uid="uid://bl5l60kr6twi1" path="res://Scenes/drone.tscn" id="8_qll42"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srufm"]
+shader = ExtResource("1_5arsr")
+shader_parameter/inversion = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lk16"]
+shader = ExtResource("1_5arsr")
+shader_parameter/inversion = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_je38q"]
+shader = ExtResource("1_5arsr")
+shader_parameter/inversion = false
 
 [node name="GameplayTree" type="Node2D" unique_id=1234816670]
+material = SubResource("ShaderMaterial_srufm")
 script = ExtResource("1_cpys3")
 
 [node name="GroundTile" parent="." unique_id=967300120 instance=ExtResource("2_7rkwj")]
@@ -22,34 +34,15 @@ position = Vector2(621, 537)
 [node name="Target" parent="." unique_id=226955712 instance=ExtResource("5_dd25c")]
 position = Vector2(-252, 556)
 
+[node name="Killer" parent="." unique_id=1137907393 instance=ExtResource("1_um0va")]
+material = SubResource("ShaderMaterial_4lk16")
+position = Vector2(22, 563)
+
 [node name="Shop" parent="." unique_id=341139742 instance=ExtResource("6_fkb2u")]
 position = Vector2(1008, 518)
 
-[node name="Killer" parent="." unique_id=1137907393 instance=ExtResource("1_um0va")]
-position = Vector2(22, 563)
-
-[node name="GroundTile2" parent="." unique_id=977240334 instance=ExtResource("2_7rkwj")]
-position = Vector2(347, 309)
-scale = Vector2(5, 1)
-
-[node name="GroundTile3" parent="." unique_id=372406256 instance=ExtResource("2_7rkwj")]
-position = Vector2(-444, 194.99998)
-rotation = 0.43633232
-scale = Vector2(5, 1)
-
-[node name="GroundTile4" parent="." unique_id=76911089 instance=ExtResource("2_7rkwj")]
-position = Vector2(311, 58)
-rotation = 1.5707964
-
-[node name="GroundTile5" parent="." unique_id=1684092356 instance=ExtResource("2_7rkwj")]
-position = Vector2(-381, 55)
-rotation = 1.5707964
-
-[node name="enemy" parent="." unique_id=1928524964 instance=ExtResource("7_5arsr")]
-position = Vector2(60, 266)
-
-[node name="Drone" parent="." unique_id=12346410 instance=ExtResource("8_qll42")]
-position = Vector2(3, 43)
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1047038427]
+material = SubResource("ShaderMaterial_je38q")
 
 [connection signal="inspect" from="Poster" to="." method="_poster_inspected"]
 [connection signal="got_shot" from="Target" to="." method="_on_target_got_shot"]

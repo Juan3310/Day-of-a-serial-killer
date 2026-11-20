@@ -33,8 +33,15 @@ func _physics_process(delta: float) -> void:
 			JUMP_VELOCITY = -1000
 			
 	direction = Input.get_axis("Go left", "Go right")
+	
+	if direction == 1:
+		$AnimatedSprite2D.scale.x = -4 * direction
+	elif direction == -1:
+		$AnimatedSprite2D.scale.x = -4 * direction
 
 	if direction != 0:
+		if is_on_floor():
+			$AnimatedSprite2D.play("Walk")
 		looking_at = direction
 		if SPEED_NOW < SPEED:
 			SPEED_NOW += ACCEL
@@ -43,11 +50,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED_NOW
 	else:
 		if SPEED_NOW > 0:
+			if is_on_floor():
+				$AnimatedSprite2D.play("Walk")
 			SPEED_NOW -= ACCEL * 2
 		else:
+			$AnimatedSprite2D.play("default")
 			SPEED_NOW = 0
 		velocity.x = SPEED_NOW * looking_at
-	#velocity.x = direction * SPEED_NOW
 	move_and_slide()
 	
 func _process(_delta: float) -> void:

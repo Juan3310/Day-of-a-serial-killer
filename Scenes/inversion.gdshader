@@ -1,6 +1,6 @@
 shader_type canvas_item; 
 
-uniform bool inversion = false;
+global uniform bool inversion = false;
 
 void vertex() {
 }

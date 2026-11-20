@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bjca532v6f6vy"]
 
 [ext_resource type="Texture2D" uid="uid://djhc1onmxbhrs" path="res://Items/Ground.png" id="1_rxw4n"]
+[ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scenes/inversion.gdshader" id="1_s7q8l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s7q8l"]
+shader = ExtResource("1_s7q8l")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7q8l"]
 size = Vector2(134.125, 16.75)
@@ -9,6 +13,7 @@ size = Vector2(134.125, 16.75)
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=1146658314]
 texture_filter = 1
+material = SubResource("ShaderMaterial_s7q8l")
 position = Vector2(2, -60)
 scale = Vector2(4, 4)
 texture = ExtResource("1_rxw4n")

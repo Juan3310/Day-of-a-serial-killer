@@ -8,6 +8,7 @@ func _ready() -> void:
 	target_checklisted = false
 	$Shop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.bought.connect(on_buy)
 	$Shop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.stole.connect(on_steal)
+	RenderingServer.global_shader_parameter_set("inversion", true)
 
 
 func _process(_delta: float) -> void:

@@ -7,7 +7,7 @@
 shader = ExtResource("1_s7q8l")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7q8l"]
-size = Vector2(134.125, 16.75)
+size = Vector2(128, 12)
 
 [node name="GroundTile" type="StaticBody2D" unique_id=967300120]
 
@@ -19,5 +19,5 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_rxw4n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=690734589]
-position = Vector2(2.0625, 0.375)
+position = Vector2(2, -2)
 shape = SubResource("RectangleShape2D_s7q8l")

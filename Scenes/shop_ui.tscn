@@ -2,6 +2,25 @@
 
 [ext_resource type="Script" uid="uid://dcynpg8pcb0n0" path="res://Scripts/smoke_bomb_buy.gd" id="1_pvcbr"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6quj"]
+bg_color = Color(0.12941177, 0.12156863, 0.20392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2imj2"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.5568628, 0.2627451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o75od"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7r41"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6quj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60nai"]
+
 [node name="ShopUI" type="Control" unique_id=1249411613]
 layout_mode = 3
 anchors_preset = 15
@@ -23,6 +42,7 @@ offset_right = 244.5
 offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v6quj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1894193553]
 layout_mode = 1
@@ -39,6 +59,8 @@ size_flags_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, 20)
 offset_transform_scale = Vector2(1.6, 1.6)
+theme_override_colors/font_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5568628, 0.2627451, 1)
 text = "BUY SOMETHING AND GET OUT!"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1619264107]
@@ -49,16 +71,57 @@ size_flags_vertical = 6
 [node name="SmokeBuy" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1630585883]
 layout_mode = 2
 offset_transform_enabled = true
+theme_override_colors/font_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_focus_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2imj2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o75od")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a7r41")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6quj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_60nai")
 text = "Smoke bomb"
 script = ExtResource("1_pvcbr")
 
-[node name="Button2" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1670701419]
+[node name="SmokeBuy3" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1073861235]
 layout_mode = 2
-text = "More speed"
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_focus_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2imj2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o75od")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a7r41")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6quj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_60nai")
+text = "Smoke bomb"
+script = ExtResource("1_pvcbr")
 
-[node name="Button3" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=107953292]
+[node name="SmokeBuy2" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1851807544]
 layout_mode = 2
-text = "More bullet
-"
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_focus_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5568628, 0.2627451, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2imj2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o75od")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a7r41")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6quj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_60nai")
+text = "Smoke bomb"
+script = ExtResource("1_pvcbr")
 
 [connection signal="gui_input" from="Panel/VBoxContainer/HBoxContainer/SmokeBuy" to="Panel/VBoxContainer/HBoxContainer/SmokeBuy" method="_on_gui_input"]
+[connection signal="gui_input" from="Panel/VBoxContainer/HBoxContainer/SmokeBuy3" to="Panel/VBoxContainer/HBoxContainer/SmokeBuy3" method="_on_gui_input"]
+[connection signal="gui_input" from="Panel/VBoxContainer/HBoxContainer/SmokeBuy2" to="Panel/VBoxContainer/HBoxContainer/SmokeBuy2" method="_on_gui_input"]

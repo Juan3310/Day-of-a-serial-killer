@@ -3,10 +3,12 @@
 [ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scenes/inversion.gdshader" id="1_5arsr"]
 [ext_resource type="Script" uid="uid://q46b15v17pbm" path="res://Scripts/gameplay.gd" id="1_cpys3"]
 [ext_resource type="PackedScene" uid="uid://dn6dfgme65wra" path="res://Scenes/killer.tscn" id="1_um0va"]
+[ext_resource type="Texture2D" uid="uid://dx5mmgixou712" path="res://Items/CityLevel.png" id="3_kclv7"]
 [ext_resource type="Texture2D" uid="uid://7vfcqyay3afx" path="res://Items/SubwayLevel.png" id="3_qll42"]
 [ext_resource type="PackedScene" uid="uid://dwpoki2oemcjr" path="res://Scenes/poster.tscn" id="4_dd25c"]
 [ext_resource type="PackedScene" uid="uid://c3pes6g278i82" path="res://Scenes/target.tscn" id="5_dd25c"]
 [ext_resource type="PackedScene" uid="uid://ctg3ltutds2u6" path="res://Scenes/shop.tscn" id="6_fkb2u"]
+[ext_resource type="PackedScene" uid="uid://bjca532v6f6vy" path="res://Scenes/Ground.tscn" id="9_7eh2i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_srufm"]
 shader = ExtResource("1_5arsr")
@@ -18,9 +20,16 @@ shader = ExtResource("1_5arsr")
 material = SubResource("ShaderMaterial_srufm")
 script = ExtResource("1_cpys3")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=824566490]
+texture_filter = 1
+position = Vector2(2785, -2400.0002)
+scale = Vector2(13, 13)
+texture = ExtResource("3_kclv7")
+
 [node name="LevelGround" type="Sprite2D" parent="." unique_id=993192541]
 texture_filter = 1
-scale = Vector2(7, 7)
+position = Vector2(-255, -118)
+scale = Vector2(9, 9)
 texture = ExtResource("3_qll42")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LevelGround" unique_id=1284100995]
@@ -35,7 +44,7 @@ polygon = PackedVector2Array(74.428566, 70.14285, 120.285706, 70.57143, 133.4285
 polygon = PackedVector2Array(-20.25, 8, -16, 5.5, 18.75, 7, 18.25, 10.5)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="LevelGround/StaticBody2D" unique_id=780577353]
-polygon = PackedVector2Array(-97.25, 5.75, -120.25, 5.25, -122.25, 33.75, -188.5, 32, -184.75, -4.25, -158.5, -3.25, -158.5, -7, -183.75, -8, -179.25, -40.5, -171.25, -71.5, -105.25, -72.25, -78.5, -73.25, -64.75, -69.25, -39.5, -69.25, -20.5, -72.25, 10.25, -71.75, 25, -68.25, 38.25, -69, 53.5, -70.25, 171.25, -70, 171.25, -75, -199, -74.75, -200.25, 74.5, -191.5, 74.5, -188.75, 35.5, -149.25, 36, -143.75, 38, -134.75, 38, -120.75, 35.25, -116.5, 13.25, -101.5, 9.75)
+polygon = PackedVector2Array(-97.25, 5.75, -120.25, 5.25, -122.25, 33.75, -188.5, 32, -184.75, -4.25, -158.5, -3.25, -158.5, -7, -183.75, -8, -179.25, -40.5, -171.25, -71.5, -105.25, -72.25, -78.5, -73.25, -64.75, -69.25, -39.5, -69.25, -20.5, -72.25, 10.25, -71.75, 25, -68.25, 38.25, -69, 124.66667, -70.33333, 124.333336, -77.77778, -199, -74.75, -200.25, 74.5, -191.5, 74.5, -188.75, 35.5, -149.25, 36, -143.75, 38, -134.75, 38, -120.75, 35.25, -116.5, 13.25, -101.5, 9.75)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="LevelGround/StaticBody2D" unique_id=1095725748]
 polygon = PackedVector2Array(-149.85713, -32.142857, -149.99998, -36.571426, -129.14285, -36.285713, -130.42856, -69.99999, -128.42856, -69.99999, -127.57142, -35.714283, -116.85714, -35.714283, -117.14285, -31.42857)
@@ -53,17 +62,26 @@ polygon = PackedVector2Array(74.28571, -32.999996, 75.57143, -38.999996, 115.714
 polygon = PackedVector2Array(-191.2857, 74.85714, -190.42856, 68.428566, -83.14285, 69.85714, -83.428566, 75.14285)
 
 [node name="Poster" parent="." unique_id=1173825111 instance=ExtResource("4_dd25c")]
-position = Vector2(-1000, -361)
+position = Vector2(-1562, -621)
 
 [node name="Target" parent="." unique_id=226955712 instance=ExtResource("5_dd25c")]
-position = Vector2(1234, 131)
+position = Vector2(1358, 66)
 
 [node name="Shop" parent="." unique_id=341139742 instance=ExtResource("6_fkb2u")]
-position = Vector2(-1144, 408)
+position = Vector2(-1653, 396)
 
 [node name="Killer" parent="." unique_id=1137907393 instance=ExtResource("1_um0va")]
 material = SubResource("ShaderMaterial_4lk16")
-position = Vector2(-220, 168)
+position = Vector2(-249, -199)
+
+[node name="GroundTile" parent="." unique_id=967300120 instance=ExtResource("9_7eh2i")]
+position = Vector2(2524, -1991)
+
+[node name="GroundTile2" parent="." unique_id=1828195837 instance=ExtResource("9_7eh2i")]
+position = Vector2(2824, -2235)
+
+[node name="GroundTile3" parent="." unique_id=2049825431 instance=ExtResource("9_7eh2i")]
+position = Vector2(2544, -2633)
 
 [connection signal="inspect" from="Poster" to="." method="_poster_inspected"]
 [connection signal="got_shot" from="Target" to="." method="_on_target_got_shot"]

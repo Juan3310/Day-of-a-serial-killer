@@ -10,7 +10,7 @@ var bullet_count : int
 var cd_timer : Timer
 
 var direction
-var looking_at = 0
+var looking_at = -1
 
 var aiming_direction : Vector2
 
@@ -42,11 +42,11 @@ func _physics_process(delta: float) -> void:
 			
 	direction = Input.get_axis("Go left", "Go right")
 	
-	if direction == 1:
-		$AnimatedSprite2D.scale.x = -4 * direction
+	if looking_at == 1:
+		$AnimatedSprite2D.scale.x = -4 * looking_at
 		$Node2D.scale.x = -1
-	elif direction == -1:
-		$AnimatedSprite2D.scale.x = -4 * direction
+	elif looking_at == -1:
+		$AnimatedSprite2D.scale.x = -4 * looking_at
 		$Node2D.scale.x = 1
 
 	if direction != 0:
@@ -73,7 +73,7 @@ func _process(_delta: float) -> void:
 	if bullet_count > 0:
 		cd_timer.wait_time = 0.5
 	else:
-		cd_timer.wait_time = 1.5
+		cd_timer.wait_time = 1.0
 	
 	if Input.is_action_just_pressed("Shoot") and cd_timer.time_left == 0:
 		cd_timer.start()

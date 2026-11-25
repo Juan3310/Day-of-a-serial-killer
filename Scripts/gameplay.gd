@@ -6,14 +6,18 @@ var target_checklisted : bool
 
 func _ready() -> void:
 	target_checklisted = false
-	$Shop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.bought.connect(on_buy)
-	$Shop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.stole.connect(on_steal)
-	RenderingServer.global_shader_parameter_set("inversion", false)
-
+	$NightShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.bought.connect(on_buy)
+	$NightShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.stole.connect(on_steal)
+	$DayShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.bought.connect(on_buy)
+	$DayShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.stole.connect(on_steal)
 
 func _process(_delta: float) -> void:
-	pass
-
+	if Global.DayTime == 0:
+		$NightShop.set_process(false)
+		$DayShop.set_process(true)
+	elif Global.DayTime == 1:
+		$NightShop.set_process(true)
+		$DayShop.set_process(false)
 
 func _poster_inspected() -> void:
 	if not target_checklisted:

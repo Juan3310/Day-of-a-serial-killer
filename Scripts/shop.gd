@@ -2,6 +2,8 @@ extends Area2D
 
 var player_in_range : bool
 
+var RNG : RandomNumberGenerator
+
 func _ready() -> void:	
 	$ShopUI.visible = false
 

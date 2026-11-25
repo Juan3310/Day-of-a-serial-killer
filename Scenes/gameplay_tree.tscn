@@ -3,18 +3,26 @@
 [ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scripts/inversion.gdshader" id="1_5arsr"]
 [ext_resource type="Script" uid="uid://q46b15v17pbm" path="res://Scripts/gameplay.gd" id="1_cpys3"]
 [ext_resource type="PackedScene" uid="uid://dn6dfgme65wra" path="res://Scenes/killer.tscn" id="1_um0va"]
-[ext_resource type="Texture2D" uid="uid://dx5mmgixou712" path="res://Items/CityLevel.png" id="3_kclv7"]
+[ext_resource type="Texture2D" uid="uid://by7vfjdjmrbn0" path="res://Items/CityFixed.png" id="3_kclv7"]
 [ext_resource type="Texture2D" uid="uid://7vfcqyay3afx" path="res://Items/SubwayLevel.png" id="3_qll42"]
 [ext_resource type="PackedScene" uid="uid://dwpoki2oemcjr" path="res://Scenes/poster.tscn" id="4_dd25c"]
-[ext_resource type="Texture2D" uid="uid://dq6l6ist4fd8d" path="res://Items/Zrzut ekranu 2026-11-23 212821.png" id="4_kclv7"]
 [ext_resource type="PackedScene" uid="uid://c3pes6g278i82" path="res://Scenes/target.tscn" id="5_dd25c"]
 [ext_resource type="PackedScene" uid="uid://ctg3ltutds2u6" path="res://Scenes/shop.tscn" id="6_fkb2u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_srufm"]
 shader = ExtResource("1_5arsr")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kclv7"]
+shader = ExtResource("1_5arsr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7eh2i"]
+shader = ExtResource("1_5arsr")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lk16"]
 shader = ExtResource("1_5arsr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qll42"]
+size = Vector2(95.25, 6459)
 
 [node name="GameplayTree" type="Node2D" unique_id=1234816670]
 material = SubResource("ShaderMaterial_srufm")
@@ -22,14 +30,10 @@ script = ExtResource("1_cpys3")
 
 [node name="CityGround" type="Sprite2D" parent="." unique_id=824566490]
 texture_filter = 1
+material = SubResource("ShaderMaterial_kclv7")
 position = Vector2(2785, -2400.0002)
 scale = Vector2(13, 13)
 texture = ExtResource("3_kclv7")
-
-[node name="Sprite2D" type="Sprite2D" parent="CityGround" unique_id=1929804226]
-position = Vector2(-155.5, 92.50004)
-scale = Vector2(0.006451656, 0.0062111802)
-texture = ExtResource("4_kclv7")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="CityGround" unique_id=739453086]
 
@@ -59,7 +63,7 @@ polygon = PackedVector2Array(72.923096, 87.9231, 72.84616, 83.00003, 57.769226, 
 [node name="StaticBody2D43" type="StaticBody2D" parent="CityGround" unique_id=187556279]
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="CityGround/StaticBody2D43" unique_id=1037123925]
-polygon = PackedVector2Array(35.84616, 63.846184, 35.84616, 58.07695, 49.923096, 59.07695, 73.15384, 59.07695, 73, 65.07695)
+polygon = PackedVector2Array(35.84616, 63.846184, 35.076935, 57.769257, 49.923096, 59.07695, 73.15384, 59.07695, 73, 65.07695)
 
 [node name="StaticBody2D42" type="StaticBody2D" parent="CityGround" unique_id=1835335438]
 
@@ -89,7 +93,7 @@ polygon = PackedVector2Array(-2.8461456, -49.076904, 4, -48.230743, 11.07692, -4
 [node name="StaticBody2D37" type="StaticBody2D" parent="CityGround" unique_id=866220756]
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="CityGround/StaticBody2D37" unique_id=30569938]
-polygon = PackedVector2Array(36.84616, 89.61542, 34.461548, 56.15387, 8.6923065, 59.00003, -13.461533, 59.53849, -22, 57.846184, -19, 88.9231)
+polygon = PackedVector2Array(35.84616, 63.923103, 34.84616, 56.00003, 8.6923065, 59.00003, -13.461533, 59.53849, -22, 57.846184, -21.307693, 63.461563)
 
 [node name="StaticBody2D36" type="StaticBody2D" parent="CityGround" unique_id=920562164]
 
@@ -282,6 +286,7 @@ polygon = PackedVector2Array(238.53845, 14.538452, 250.46155, 14.846161, 254.769
 
 [node name="LevelGround" type="Sprite2D" parent="." unique_id=993192541]
 texture_filter = 1
+material = SubResource("ShaderMaterial_7eh2i")
 position = Vector2(-255, -118)
 scale = Vector2(9, 9)
 texture = ExtResource("3_qll42")
@@ -292,7 +297,7 @@ texture = ExtResource("3_qll42")
 polygon = PackedVector2Array(-82.75, 69.75, -83.25, 53.25, -79, 41.75, -68.75, 33.25, 10.75, 32.75, 34, 33, 47.25, 31.5, 56, 39.5, 63.5, 47.25, 70, 59, 74.5, 70.75)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="LevelGround/StaticBody2D" unique_id=1877055325]
-polygon = PackedVector2Array(74.428566, 70.14285, 120.285706, 70.57143, 133.42856, 70.57143, 133.99998, 67.428566, 147.71428, 67.28571, 146.85713, 58.42857, 153.71428, 58.571426, 155.2857, 45.42857, 166.99998, 45.714283, 168.42856, 32.42857, 192.99998, 32.999996, 184.85713, -3.142857, 156.42856, 0.14285713, 128.57143, 7.4285707, 103.428566, 8.571428, 99.57143, 10.428571, 106.285706, 18.42857, 107.85714, 34.285713, 105.14285, 34.285713, 86.71428, 8.142857, 95.57143, 3.4285712, 127.428566, 3.7142854, 147.2857, -4.142857, 168.85713, -6.9999995, 184.71428, -6.7142854, 188.71428, -29.571426, 185.99998, -48.85714, 172.71428, -69.85714, 173.2857, -74.85714, 199.99998, -74.85714, 199.99998, 73.99999, 73.14285, 74.28571)
+polygon = PackedVector2Array(-83.33333, 69.88889, 120.285706, 70.57143, 133.42856, 70.57143, 133.99998, 67.428566, 147.71428, 67.28571, 146.85713, 58.42857, 153.71428, 58.571426, 155.2857, 45.42857, 166.99998, 45.714283, 168.42856, 32.42857, 192.99998, 32.999996, 184.85713, -3.142857, 156.42856, 0.14285713, 128.57143, 7.4285707, 103.428566, 8.571428, 99.57143, 10.428571, 106.285706, 18.42857, 107.85714, 34.285713, 105.14285, 34.285713, 86.71428, 8.142857, 95.57143, 3.4285712, 127.428566, 3.7142854, 147.2857, -4.142857, 168.85713, -6.9999995, 184.71428, -6.7142854, 188.71428, -29.571426, 185.99998, -48.85714, 172.71428, -69.85714, 173.2857, -74.85714, 199.99998, -74.85714, 199.99998, 73.99999, 73.14285, 74.28571)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LevelGround/StaticBody2D" unique_id=674679291]
 polygon = PackedVector2Array(-20.25, 8, -16, 5.5, 18.75, 7, 18.25, 10.5)
@@ -313,7 +318,7 @@ polygon = PackedVector2Array(-33.142857, -34.85714, -29.42857, -37.285713, 21.85
 polygon = PackedVector2Array(74.28571, -32.999996, 75.57143, -38.999996, 115.71428, -40.999996, 153.57143, -40.714283, 153.14285, -34.85714, 88.85714, -34.714283)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="LevelGround/StaticBody2D" unique_id=1412695117]
-polygon = PackedVector2Array(-191.2857, 74.85714, -190.42856, 68.428566, -83.14285, 69.85714, -83.428566, 75.14285)
+polygon = PackedVector2Array(-191.2857, 74.85714, -190.42856, 68.428566, -83.14285, 69.85714, 73.333336, 74.22222)
 
 [node name="Poster" parent="." unique_id=1173825111 instance=ExtResource("4_dd25c")]
 position = Vector2(-1562, -621)
@@ -321,12 +326,31 @@ position = Vector2(-1562, -621)
 [node name="Target" parent="." unique_id=226955712 instance=ExtResource("5_dd25c")]
 position = Vector2(1358, 66)
 
-[node name="Shop" parent="." unique_id=341139742 instance=ExtResource("6_fkb2u")]
+[node name="NightShop" parent="." unique_id=341139742 instance=ExtResource("6_fkb2u")]
 position = Vector2(-1653, 396)
+
+[node name="DayShop" parent="." unique_id=1183686242 instance=ExtResource("6_fkb2u")]
+position = Vector2(2836, -936)
 
 [node name="Killer" parent="." unique_id=1137907393 instance=ExtResource("1_um0va")]
 material = SubResource("ShaderMaterial_4lk16")
 position = Vector2(2316, -917)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=131160268]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=697338007]
+position = Vector2(-1162.25, -4018)
+shape = SubResource("RectangleShape2D_qll42")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1503473402]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2126495182]
+position = Vector2(6732.625, -4008.5)
+shape = SubResource("RectangleShape2D_qll42")
 
 [connection signal="inspect" from="Poster" to="." method="_poster_inspected"]
 [connection signal="got_shot" from="Target" to="." method="_on_target_got_shot"]

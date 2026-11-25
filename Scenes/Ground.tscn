@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjca532v6f6vy"]
 
 [ext_resource type="Texture2D" uid="uid://djhc1onmxbhrs" path="res://Items/Ground.png" id="1_rxw4n"]
-[ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scenes/inversion.gdshader" id="1_s7q8l"]
+[ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scripts/inversion.gdshader" id="1_s7q8l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s7q8l"]
 shader = ExtResource("1_s7q8l")

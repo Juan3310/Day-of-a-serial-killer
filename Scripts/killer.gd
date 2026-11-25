@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var ray : RayCast2D
+
 var SPEED = 800.0
 var SPEED_NOW 
 var JUMP_VELOCITY = 0
@@ -19,6 +21,7 @@ signal karate_chop
 
 func _ready() -> void:
 	cd_timer = $Node2D/Cooldown
+	ray = $RayCast2D
 	
 	SPEED_NOW = 0
 	
@@ -67,6 +70,12 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("default")
 			SPEED_NOW = 0
 		velocity.x = SPEED_NOW * looking_at
+		
+	if ray.get_collider() is StaticBody2D:
+		self.set_collision_mask_value(1, true)
+	else:
+		self.set_collision_mask_value(1, false)
+		
 	move_and_slide()
 	
 func _process(_delta: float) -> void:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfpkq0ugnnmid" path="res://Scripts/killer.gd" id="1_4lk16"]
 [ext_resource type="Texture2D" uid="uid://c038gcdpgni52" path="res://Items/KillerExist.png" id="1_nw6c6"]
-[ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scenes/inversion.gdshader" id="2_5tl0p"]
+[ext_resource type="Shader" uid="uid://bws8wlcrr6eyj" path="res://Scripts/inversion.gdshader" id="2_5tl0p"]
 [ext_resource type="Texture2D" uid="uid://cc2l5yt587j5e" path="res://Items/KillerWalk.png" id="4_kjvon"]
 [ext_resource type="Texture2D" uid="uid://bjek8ras2yv4d" path="res://Items/PistolGun.png" id="5_282w8"]
 [ext_resource type="Texture2D" uid="uid://cakrd63a65wic" path="res://Items/Chop.png" id="6_srufm"]
@@ -126,5 +126,9 @@ shape = SubResource("RectangleShape2D_srufm")
 
 [node name="Cooldown" type="Timer" parent="Node2D" unique_id=310379253]
 one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=9729459]
+position = Vector2(0, 50)
+target_position = Vector2(0, 25)
 
 [connection signal="karate_chop" from="." to="Node2D/Chop" method="_on_killer_karate_chop"]

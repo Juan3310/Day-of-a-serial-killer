@@ -1,11 +1,11 @@
 extends Node
 
 var DayTime : int #0 is day, 1 is night
-var Noons : int #Counts every switch between time and night, therefore odds are nights, and evens are days
+var Noons : int #Counts every switch between time and night, therefore evens are nights, and odds are days
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DayTime = 1
-	Noons = 0
+	DayTime = 0
+	Noons = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

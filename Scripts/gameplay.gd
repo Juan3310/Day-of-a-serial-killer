@@ -4,12 +4,21 @@ var bullet_scene : PackedScene = load("res://Scenes/bullet.tscn")
 
 var target_checklisted : bool
 
+var DayTimer : Timer
+
+signal newTime(time : String)
+var Noon
+
 func _ready() -> void:
+	DayTimer = $DayTimer
+	
 	target_checklisted = false
 	$NightShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.bought.connect(on_buy)
 	$NightShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.stole.connect(on_steal)
 	$DayShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.bought.connect(on_buy)
 	$DayShop/ShopUI/Panel/VBoxContainer/HBoxContainer/SmokeBuy.stole.connect(on_steal)
+	
+	newTime.emit("day")
 
 func _process(_delta: float) -> void:
 	if Global.DayTime == 0:
@@ -18,6 +27,12 @@ func _process(_delta: float) -> void:
 	elif Global.DayTime == 1:
 		$NightShop.set_process(true)
 		$DayShop.set_process(false)
+	if DayTimer.time_left == 0.0:
+		if Global.Noons % 2 == 0:
+			Noon = "night"
+		else:
+			Noon = "day"
+		newTime.emit(Noon)
 
 func _poster_inspected() -> void:
 	if not target_checklisted:

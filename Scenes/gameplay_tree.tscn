@@ -352,6 +352,11 @@ collision_mask = 2
 position = Vector2(6732.625, -4008.5)
 shape = SubResource("RectangleShape2D_qll42")
 
+[node name="DayTimer" type="Timer" parent="." unique_id=1285490213]
+wait_time = 60.0
+autostart = true
+
+[connection signal="newTime" from="." to="NightShop" method="_on_gameplay_tree_new_time"]
 [connection signal="inspect" from="Poster" to="." method="_poster_inspected"]
 [connection signal="got_shot" from="Target" to="." method="_on_target_got_shot"]
 [connection signal="shoot" from="Killer" to="." method="on_shoot_emit"]

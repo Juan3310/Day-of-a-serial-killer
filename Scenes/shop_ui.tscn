@@ -83,7 +83,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_o75od")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_a7r41")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6quj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_60nai")
-text = "Smoke bomb"
 script = ExtResource("1_pvcbr")
 
 [node name="SmokeBuy3" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1073861235]
@@ -101,7 +100,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_o75od")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_a7r41")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6quj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_60nai")
-text = "Smoke bomb"
 script = ExtResource("1_pvcbr")
 
 [node name="SmokeBuy2" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1851807544]
@@ -119,7 +117,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_o75od")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_a7r41")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6quj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_60nai")
-text = "Smoke bomb"
 script = ExtResource("1_pvcbr")
 
 [connection signal="gui_input" from="Panel/VBoxContainer/HBoxContainer/SmokeBuy" to="Panel/VBoxContainer/HBoxContainer/SmokeBuy" method="_on_gui_input"]
